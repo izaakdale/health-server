@@ -47,7 +47,7 @@ spec:
     - websecure
   routes:
     - kind: Rule
-      match: Host(`api.izaakserver.com`) && PathPrefix(`/_/health`)
+      match: Host(`api.izaakserver.com`) && PathPrefix(`/health`)
       services:
         - kind: Service
           name: health
@@ -64,6 +64,6 @@ metadata:
 spec:
   stripPrefix:
     prefixes:
-      - /_/health
+      - /health
 ---
 
