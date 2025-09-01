@@ -1,4 +1,4 @@
-module github.com/izaakdale/hello-server
+module github.com/izaakdale/health-server
 
 go 1.24.2
 

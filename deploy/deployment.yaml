@@ -47,19 +47,19 @@ spec:
     - websecure
   routes:
     - kind: Rule
-      match: Host(`api.izaakserver.com`) && PathPrefix(`/_/health`)
+      match: PathPrefix(`/_/health`)
       services:
         - kind: Service
           name: health
           namespace: app
           port: 80
       middlewares:
-        - name: stripprefix
+        - name: striphealthprefix
 ---
 apiVersion: traefik.io/v1alpha1
 kind: Middleware
 metadata:
-  name: stripprefix
+  name: striphealthprefix
   namespace: app
 spec:
   stripPrefix:

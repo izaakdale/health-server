@@ -3,10 +3,10 @@ WORKDIR /
 COPY . ./
 RUN go mod download
 
-RUN go build -o /hello-server
+RUN go build -o /health-server
 
 FROM alpine
-COPY --from=builder /hello-server .
+COPY --from=builder /health-server .
 
 EXPOSE 80
-CMD [ "/hello-server" ]
+CMD [ "/health-server" ]

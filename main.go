@@ -12,7 +12,7 @@ import (
 func main() {
 	mux := ittp.NewServeMux()
 
-	mux.Get("/_/health", func(w http.ResponseWriter, r *http.Request) {
+	mux.Get("/", func(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusOK)
 		w.Write([]byte("200 OK"))
 	})
